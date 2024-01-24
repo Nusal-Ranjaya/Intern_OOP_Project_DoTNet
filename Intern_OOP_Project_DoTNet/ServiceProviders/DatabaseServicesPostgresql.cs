@@ -158,7 +158,7 @@ namespace Intern_OOP_Project_DoTNet.ServiceProviders
                 {
                     if (reader.Read())
                     {
-                        entryNum = reader.GetInt32(0); // Assuming "total_entries" is the first column
+                        entryNum = reader.GetInt32(0); 
                     }
                 }
             }
@@ -212,10 +212,10 @@ namespace Intern_OOP_Project_DoTNet.ServiceProviders
 
                         for (int i = 0; i < Reader.FieldCount; i++)
                         {
-                            // Consider handling DBNull values
+                            
                             if (Reader.IsDBNull(i))
                             {
-                                tempList.Add(null); // or add a specific value for DBNull
+                                tempList.Add(null); 
                             }
                             else
                             {
