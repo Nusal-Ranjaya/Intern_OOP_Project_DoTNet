@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,5 +21,7 @@ namespace Intern_OOP_Project_DoTNet.Interfaces
         int GetNumberOfEntries(String tableName);
 
         void AddDataCustomer(int id, String name, Boolean subscribe, String text);
+
+        List<List<object>> ReadData(string tableName);
     }
 }

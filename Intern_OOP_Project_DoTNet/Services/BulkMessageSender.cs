@@ -18,13 +18,13 @@ namespace Intern_OOP_Project_DoTNet.Services
             this.BulkMessagesObj = bulkMessages;
         }
 
-        public void StartNotification(String tableName, DatabaseServices dbServices, MessageServices messageService)
+        public void StartNotification(String tableName)
         {
-            BulkMessagesObj.StartNotification(tableName, dbServices, messageService);
+            BulkMessagesObj.StartNotification(tableName);
         }
-        public void SendMessagesAllCustomers(String message, String subject, MessageServices messageService)
+        public void SendMessagesAllCustomers(String message, String subject)
         {
-            BulkMessagesObj.SendMessagesAllCustomers(message, subject, messageService);
+            BulkMessagesObj.SendMessagesAllCustomers(message, subject);
            
         }
     }

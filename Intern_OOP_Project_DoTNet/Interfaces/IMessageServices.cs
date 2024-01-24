@@ -11,6 +11,6 @@ namespace Intern_OOP_Project_DoTNet.Interfaces
     {
         void SendMessage(DisplayServices display);
 
-        void SendAutoMessage(String to, String subject, String message);
+        void SendReminders(string message);
     }
 }

@@ -20,9 +20,9 @@ namespace Intern_OOP_Project_DoTNet.Services
             MessageObj.SendMessage(display);
         }
 
-        public void SendAutoMessage(String to, String subject, String message)
-        {
-            MessageObj.SendAutoMessage(to, subject, message);
+        public void SendReminders(string message)
+        { 
+            MessageObj.SendReminders(message);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Intern_OOP_Project_DoTNet
             IMessageServices email = new EmailServices(); // Email
             MessageServices messageService = new MessageServices(email);
 
-            IBulkMessage emailBulk = new BulkEmailSender(); // Email
+            IBulkMessage emailBulk = new BulkEmailSender(dbServices, messageService); // Email
             BulkMessageSender bulkMessage = new BulkMessageSender(emailBulk);
 
             // Reminder and Subscriber Factories
@@ -33,8 +33,8 @@ namespace Intern_OOP_Project_DoTNet
             do
             {
                 // Send automatic email if there's a reminder to be sent
-               // bulkMessage.StartNotification("personal", dbServices, messageService);
-               // bulkMessage.StartNotification("official", dbServices, messageService);
+                bulkMessage.StartNotification("personal");
+                bulkMessage.StartNotification("official");
 
                 Console.WriteLine(@"
                     Enter option type:
@@ -46,8 +46,7 @@ namespace Intern_OOP_Project_DoTNet
                     6 - view all subscribers
                     7 - change subscriber subscription
                     8 - Remove subscriber from the table
-                    9 - send an email
-                    10 - send email to all subscribers");
+                    9 - send an email");
 
                 int option;
                 try
@@ -89,9 +88,7 @@ namespace Intern_OOP_Project_DoTNet
                     case 9:
                         messageService.SendMessage(display);
                         break;
-                    case 10:
-                        factoryS.GetSubscriberObj().MailToAll(display, bulkMessage, messageService);
-                        break;
+
                     default:
                         Console.WriteLine("Wrong input!");
                         break;

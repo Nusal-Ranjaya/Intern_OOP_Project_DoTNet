@@ -92,6 +92,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\EmailConfig.cs" />
     <Compile Include="Interfaces\IBulkMessage.cs" />
     <Compile Include="Interfaces\IDataServices.cs" />
     <Compile Include="Interfaces\IDisplay.cs" />

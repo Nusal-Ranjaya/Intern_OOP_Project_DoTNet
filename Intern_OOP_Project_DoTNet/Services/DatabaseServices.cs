@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,6 +43,11 @@ namespace Intern_OOP_Project_DoTNet.Services
         public void UpdateStatus(string tableName, int id, bool status)
         {
             DataBaseObj.UpdateStatus(tableName,id,status);
+        }
+
+        public List<List<object>> ReadData(string tableName)
+        {
+            return DataBaseObj.ReadData(tableName);
         }
     }
 }

@@ -13,8 +13,6 @@ namespace Intern_OOP_Project_DoTNet.Interfaces
 
         void RemoveSubscriber(DisplayServices display, DatabaseServices dbServices);
 
-        void MailToAll(DisplayServices display, BulkMessageSender bulkMessage, MessageServices messageService);
-
         void UpdateSubscriber(DisplayServices display, DatabaseServices dbServices);
 
         void GetAllSubscriberData(DatabaseServices dbServices);

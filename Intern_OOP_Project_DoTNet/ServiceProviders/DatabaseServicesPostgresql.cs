@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -189,6 +191,44 @@ namespace Intern_OOP_Project_DoTNet.ServiceProviders
                     }
                 }
             }
+        }
+
+        public List<List<object>> ReadData(string tableName)
+        {
+            List<List<object>> ListOut = new List<List<object>>();
+            string SQL = $"SELECT * FROM {tableName}";
+
+            using (NpgsqlConnection Connection = new NpgsqlConnection(ConnectionString))
+            {
+                Connection.Open();
+
+                using (NpgsqlCommand Command = new NpgsqlCommand(SQL, Connection))
+                using (NpgsqlDataReader Reader = Command.ExecuteReader())
+                {
+             
+                    while (Reader.Read())
+                    {
+                        List<object> tempList = new List<object>();
+
+                        for (int i = 0; i < Reader.FieldCount; i++)
+                        {
+                            // Consider handling DBNull values
+                            if (Reader.IsDBNull(i))
+                            {
+                                tempList.Add(null); // or add a specific value for DBNull
+                            }
+                            else
+                            {
+                                tempList.Add(Reader[i]);
+                            }
+                        }
+
+                        ListOut.Add(tempList);
+                    }
+                }
+            }
+
+            return ListOut;
         }
     }
 }

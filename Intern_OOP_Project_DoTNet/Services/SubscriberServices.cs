@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Intern_OOP_Project_DoTNet.Services
 {
-    internal class SubscriberServices : ISubscriber
+    internal class SubscriberServices 
     {
         private ISubscriber SubObj;
 
@@ -26,10 +26,6 @@ namespace Intern_OOP_Project_DoTNet.Services
             SubObj.RemoveSubscriber(display, dbServices);
         }
 
-        public void MailToAll(DisplayServices display, BulkMessageSender bulkMessage, MessageServices messageService)
-        {
-            SubObj.MailToAll(display, bulkMessage, messageService);
-        }
 
         public void UpdateSubscriber(DisplayServices display, DatabaseServices dbServices)
         {

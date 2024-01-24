@@ -9,7 +9,7 @@ namespace Intern_OOP_Project_DoTNet.Interfaces
 {
     internal interface IBulkMessage
     {
-        void StartNotification(String tableName, DatabaseServices dbServices, MessageServices messageService);
-        void SendMessagesAllCustomers(String message, String subject, MessageServices messageService);
+        void StartNotification(String tableName);
+        void SendMessagesAllCustomers(String message, String subject);
     }
 }

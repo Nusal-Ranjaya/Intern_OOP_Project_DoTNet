@@ -1,4 +1,4 @@
-﻿using Intern_OOP_Project_DoTNet.Interfaces;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Intern_OOP_Project_DoTNet.ServiceProviders
 {
-    internal class ConsoleServices : IDisplay
+    internal class ConsoleServices : Interfaces.IDisplay
     {
         public int ChooseReminder()
         {
