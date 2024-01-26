@@ -19,7 +19,8 @@ namespace Intern_OOP_Project_DoTNet.ServiceProviders
         static string Result;
         static int EntryNum;
         void IDataServices.AddData(string tableName, int id, DateTime date, DateTime time, int priority, bool state, string text)
-        {
+        {            
+
                 string sql = $"INSERT INTO {tableName} (id, date, time, priority, state, text) VALUES (@id, @date, @time, @priority, @state, @text)";
 
                 using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString))
